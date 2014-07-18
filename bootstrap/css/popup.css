@@ -1,0 +1,32 @@
+.section-left,.section-right{
+    width:45%;
+    height:100%;
+    float:left;
+    margin-left:2%;
+}
+
+h1{
+    color:#428eba;
+}
+.section-left{
+    border:2px solid #428eba;
+}
+#canvas{
+    width:600px;
+    height:530px;
+}
+
+p{
+    margin-left:38%;
+}
+
+#footer{
+	float:left;
+	width:500px;
+	height:5px;
+
+}
+a{
+	float:right;
+	margin-right:5px;
+}

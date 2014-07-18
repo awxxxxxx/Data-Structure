@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="./bootstrap/css/popup.css" type="text/css" media="all" />
+        <title>图的遍历的演示</title>
+    </head>
+    <body>
+        <center> <h1 class="title">图的遍历操作的演示</h1></center>
+        <div id="container">
+            <div class="section-left">
+                <canvas id="canvas">
+                </canvas>
+            </div>
+            <div class="section-right">
+                <div class="panel panel-primary">
+                   <div class="panel-heading">
+                        <p class="panel-title">创建一个无向图</p>
+                   </div> 
+                   <div class="panel-body">
+                       <div class="input-group">
+                            <input type="text" class="form-control" placeholder="输入顶点以逗号隔开,创建无向图" autofocus="actofocus"/>
+                            <span class="input-group-btn">
+                                <button type="button"id="1" class="btn btn-default">创建</button>
+                            </span>
+                       </div>
+                   </div>
+                </div>
+                <div class="panel panel-danger">
+                   <div class="panel-heading">
+                        <p class="panel-title">销毁当前的无向图,慎点!!!</p>
+                   </div> 
+                   <div class="panel-body">
+                       <div class="input-group">
+                            <span class="input-group-btn">
+                                <button type="button"id="11" class="btn btn-default">我删!</button>
+                            </span>
+                       </div>
+                   </div>
+                </div>
+                <div class="panel panel-info">
+                   <div class="panel-heading">
+                        <p class="panel-title">图的遍历操作</p>
+                   </div> 
+                   <ul class="list-group">
+                       <li class="list-group-item">
+                            <div class="input-group">
+                                <input type="text" class="form-control"placeholder="输入顶点名称,进行深度遍历"/>
+                                <span class="input-group-btn">
+                                    <button type="button"id="12" class="btn btn-default">Go!</button>
+                                </span>
+                            </div>
+                         </li>
+                    </ul>
+                   <ul class="list-group">
+                       <li class="list-group-item">
+                            <div class="input-group">
+                                <input type="text" class="form-control"placeholder="输入顶点名称,进行广度遍历"/>
+                                <span class="input-group-btn">
+                                    <button type="button"id="13" class="btn btn-default">Go!</button>
+                                </span>
+                            </div>
+                         </li>
+                    </ul>
+                </div>
+                <div class="panel panel-success">
+                   <div class="panel-heading">
+                        <p class="panel-title">图的顶点和有关弧的操作</p>
+                   </div>
+                   <div class="panel-body">
+                   </div>
+                   <ul class="list-group">
+                       <li class="list-group-item">
+                            <div class="input-group">
+                                <input type="text" class="form-control"placeholder="输入顶点名,返回该顶点的位置(LocateVex)"/>
+                                <span class="input-group-btn">
+                                    <button type="button"id="2" class="btn btn-default">Go!</button>
+                                </span>
+                            </div>
+                       </li>
+                       <li class="list-group-item">
+                            <div class="input-group">
+                                <input type="text" class="form-control"placeholder="输入编号寻找该顶点(GetVex)"/>
+                                <span class="input-group-btn">
+                                    <button type="button"id="3" class="btn btn-default">Go!</button>
+                                </span>
+                            </div>
+                       </li>
+                       <li class="list-group-item">
+                            <div class="input-group">
+                                <input type="text" class="form-control"placeholder="输入顶点和要修改的值,以逗号隔开,对某个顶点进行赋值(PutVex)"/>
+                                <span class="input-group-btn">
+                                    <button type="button"id="4" class="btn btn-default">Go!</button>
+                                </span>
+                            </div>
+                       </li>
+                       <li class="list-group-item">
+                            <div class="input-group">
+                                <input type="text" class="form-control"placeholder="输入顶点名寻找该顶点的第一个邻接点(FirstAdjVex)"/>
+                                <span class="input-group-btn">
+                                    <button type="button"id="5" class="btn btn-default">Go!</button>
+                                </span>
+                            </div>
+                       </li>
+                       <li class="list-group-item">
+                            <div class="input-group">
+                                <input type="text" class="form-control"placeholder="分别输入两个顶点(以逗号隔开),寻找两点的下一个邻接顶点(NextAdjVex)"/>
+                                <span class="input-group-btn">
+                                    <button type="button"id="6" class="btn btn-default">Go!</button>
+                                </span>
+                            </div>
+                       </li>
+                       <li class="list-group-item">
+                            <div class="input-group">
+                                <input type="text" class="form-control"placeholder="输入顶点名,添加新顶点(InsertVex)"/>
+                                <span class="input-group-btn">
+                                    <button type="button"id="7" class="btn btn-default">Go!</button>
+                                </span>
+                            </div>
+                       </li>
+                       <li class="list-group-item">
+                            <div class="input-group">
+                                <input type="text" class="form-control"placeholder="输入顶点名,删除该顶点(DeleteVex)"/>
+                                <span class="input-group-btn">
+                                    <button type="button"id="8" class="btn btn-default">Go!</button>
+                                </span>
+                            </div>
+                       </li>
+                       <li class="list-group-item">
+                            <div class="input-group">
+                                <input type="text" class="form-control"placeholder="分别输入两个顶点(以逗号隔开),在两顶点间增加一条弧(InsertArc)"/>
+                                <span class="input-group-btn">
+                                    <button type="button"id="9" class="btn btn-default">Go!</button>
+                                </span>
+                            </div>
+                       </li>
+                       <li class="list-group-item">
+                            <div class="input-group">
+                                <input type="text" class="form-control"placeholder="分别输入两个顶点(以逗号隔开),删除两顶点间的弧(DeleteArc)"/>
+                                <span class="input-group-btn">
+                                    <button type="button"id="10" class="btn btn-default">Go!</button>
+                                </span>
+                            </div>
+                       </li>
+                   </ul>
+                </div>
+            </div>
+        </div>
+
+    </body>
+    <script type="text/javascript" charset="utf-8" src="./bootstrap/js/jquery.js"> </script>
+    <script src="./bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8" src="./Graph.js"> </script>
+    <script src="./Draw.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+      (function() {
+         $(".panel-success li").hide();
+         $(".panel-success").mouseover(function() {
+             $("li").show(600);
+             setTimeout(function(){
+                    $(".panel-success").mouseleave(function(){
+                            $(".panel-success li").hide(400);
+                     });
+            
+                 },200);
+             });
+
+      })();
+    </script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
